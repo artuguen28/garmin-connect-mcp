@@ -105,6 +105,30 @@ GARMIN_PASSWORD=your_password
 PORT=3000
 ```
 
+## Deploy Fast (Railway)
+
+This is the fastest no-localhost setup for a small user group.
+
+> [!WARNING]
+> This server is intentionally deployed without authentication.
+> Use it only for trusted, small audiences and avoid sharing the public URL broadly.
+
+1. Push this repo to GitHub.
+2. In Railway, create a new project from your GitHub repo.
+3. Set environment variables in Railway:
+
+```env
+GARMIN_USERNAME=your.email@example.com
+GARMIN_PASSWORD=your_password
+PORT=3000
+```
+
+4. Deploy and copy your service URL:
+
+`https://your-service.up.railway.app/mcp`
+
+5. Use that URL directly in ChatGPT MCP connector settings.
+
 ## Run Locally
 
 Development mode:
@@ -197,4 +221,4 @@ If the URL changes, update the connector URL in ChatGPT.
 
 - Garmin Connect data itself still requires Garmin account login.
 - This project uses your local Garmin credentials from `.env` on startup.
-- No additional authentication is required between ChatGPT and this MCP endpoint.
+- No additional authentication is required for this MCP endpoint.

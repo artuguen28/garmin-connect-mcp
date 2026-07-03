@@ -6,7 +6,9 @@
   "main": "dist/server.js",
   "scripts": {
     "dev": "tsx watch src/server.ts",
-    "start": "tsx src/server.ts",
+    "start": "node dist/server.js",
+    "start:dev": "tsx src/server.ts",
+    "prestart": "npm run build",
     "build": "tsc -p tsconfig.json",
     "tunnel": "lt --port 3000",
     "tunnel:cloudflare": "cloudflared tunnel --url http://localhost:3000",
